@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <form id = "form1">
+            Name: <input name = "jay" type = "text" size = "20">
+        </form>
+        <button onclick = "outputname()">Submit</button>
+        <script>
+        function outputname() {
+        var x, y, a, b, answer;
+        x = document.getElementById("form1");
+        y = x.elements["jay"].value;
+        document.write("Hello " + y + "<br>")
+        document.write(y + " is a very good tutor!" + "<br>")
+        }
+        </script>
+    </body>
+</html>
