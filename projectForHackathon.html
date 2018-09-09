@@ -6,13 +6,46 @@
     <body>
         <h1>Textbook Condenser</h1>
         <br>
-        <form action = "" method = "post" id = "usrform">
-            Please input the text you want to condense: <br>
-            <textarea rows = "4" cols = "50" name = "usrtext" form = "usrform">Enter text here...
-            </textarea>
-            <br>
-            <input type = "submit" value = "Submit">
-            <input type = "reset" value = "Reset">
-        </form>
+      <form action = "" method = "post" id = "form1">
+            Please input the text you want to condense: <br><br>
+        <textarea rows = "4" cols = "50" name = "jay" type = "text" size = "20">Text goes here...</textarea>
+      </form>
+      <button onclick = "outputname()">
+        Submit
+      </button>
+      <script>
+        function summaryAlgorithm (text) {
+            var finalSummary = "";
+            var importantStarters = ["This essay discusses", "The issue focused on", "In this essay", "key aspect", "central theme", "Emphasis", "explored", "outlined", "demonstrated", "explained", "presented", "evaluated", "described", "defined"];
+            var hasStarters = false;
+            for (i = 0; i < importantStarters.length; i++){
+                var starters = importantStarters[i].toLowerCase();
+                if (text.includes(starters)) {
+                    hasStarters = true;
+                }
+            }
+            return hasStarters;
+            /*
+            if (hasStarters) {
+                return "has starters";
+            }
+            else {
+                return "no starters";
+            }
+            */
+        }
+        function outputname() {
+          var x, y, a, b, answer;
+          x = document.getElementById("form1");
+          y = x.elements["jay"].value;
+          document.getElementById("demo").innerHTML = summaryAlgorithm (y);
+          document.getElementById("demo").innerHTML += "\n" + y + " is a very good name!" + "<br>";
+        }
+      </script>
+      
+      <p id = "demo">
+      
+      </p>
+        
     </body>
 </html>
